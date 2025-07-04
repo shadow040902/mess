@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.left-panel .content {
+  text-align: center;
+}
+
+.left-panel h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.right-panel {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form h2 {
+  margin-bottom: 10px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.signup-form .terms {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.signup-form .btn {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.btn.apple {
+  background-color: #000;
+  color: white;
+}
+
+.separator {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 0.85em;
+  color: #999;
+}
+
+.login-link {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.login-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}

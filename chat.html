@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messenger</title>
+  <link rel="stylesheet" href="chat.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.min.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.min.js"></script>
+  <style>
+    body {
+      background: #f4f6fb;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+    .chat-container {
+      display: flex;
+      height: 100vh;
+      max-width: 1200px;
+      margin: auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 260px;
+      background: #2d3a4b;
+      color: #fff;
+      padding: 32px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar h2 {
+      margin: 0 0 24px 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .contacts {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact {
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .contact.active, .contact:hover {
+      background: #40506a;
+    }
+    .chat-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #f4f6fb;
+    }
+    .chat-header {
+      padding: 24px;
+      background: #fff;
+      border-bottom: 1px solid #e0e6ed;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3a4b;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .message {
+      max-width: 60%;
+      padding: 12px 18px;
+      border-radius: 16px;
+      background: #e6eaf1;
+      color: #2d3a4b;
+      align-self: flex-start;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      word-break: break-word;
+    }
+    .message.me {
+      background: #4f8cff;
+      color: #fff;
+      align-self: flex-end;
+    }
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 24px;
+      background: #fff;
+      border-top: 1px solid #e0e6ed;
+    }
+    .chat-input input[type="text"] {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-size: 1rem;
+      outline: none;
+    }
+    .chat-input button {
+      background: #4f8cff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .chat-input button:hover {
+      background: #357ae8;
+    }
+    emoji-picker {
+      position: absolute;
+      bottom: 70px;
+      right: 40px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <aside class="sidebar">
+      <h2>MyChat</h2>
+      <div class="contacts">
+        <div class="contact active">General</div>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <div class="chat-header">General Chat</div>
+      <div class="chat-messages" id="messages"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off" />
+        <button id="emojiBtn">😊</button>
+        <button id="sendBtn">Send</button>
+      </div>
+      <emoji-picker style="display:none;" id="emojiPicker"></emoji-picker>
+    </main>
+  </div>
+  <script src="chat.js"></script>
+</body>
+</html>
